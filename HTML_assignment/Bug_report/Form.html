@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bug Form</title>
+	<link rel="stylesheet" type="text/css" href="Index.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<div id="abc"><a href="#">TO THE NEW</a></div>
+
+			<div id = navbar>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Quick Help</a></li>
+				</ul>
+			</div>
+
+		</nav>
+	</header>
+<hr>
+	<div class="container">
+		<form action="#" method="get">
+			<div class="head1">Bug Report</div>
+			<div class="body1">
+				<div class="title">Title:* <br>
+					<input type="text" name="title" required="required">
+				</div>
+				<div class="Description">Description:* <br>
+					
+					<textarea required="required"></textarea>
+				</div>
+				<div class="dropdown">Operating System: <br>
+					<select name="os">
+						<option value="Window">Windows XP</option>
+						<option value="mac">Mac</option>
+						<option value="linux">mac</option>
+					</select>
+				</div>
+				<div class="dropdown">Product:* <br>
+					<select name="product">
+						<option value="formoid">Formoid</option>
+						<option value="test">t1</option>
+						<option value="test">t2</option>
+					</select>
+				</div>
+				<div class="version">Version:* <br>
+					<input type="text" name="Version" required="required">
+				</div>
+				<div class="licence">
+					Licence:<br>
+						<input type="radio" name="licence" value="free">Free
+						<input type="radio" name="licence" value="Business" id ="licence-center">Business				
+				</div>
+				<div class="dropdown">Severity:<br>
+					<select name="Severity">
+						<option value="Critical">Critical</option>
+						<option value="test">t1</option>
+						<option value="test">t2</option>
+					</select>
+				</div>
+				<div class="Attachments">Attachments: <br> 
+				<input type="text" name="Attachments" placeholder="No file selected"> <button type="button">Choose File</button>
+				</div>
+			</div>
+			<div class="footer1">
+				<button type="submit" id="footer-button">Send</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
