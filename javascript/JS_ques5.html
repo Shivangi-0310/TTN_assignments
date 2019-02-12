@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EMPLOYEE DETAILS</title>
+	<script type="text/javascript">
+		function Employee_Detail()
+{
+	var emp = [
+	    { Name: 'Aakash', Age: 23, Salary: 50000, DOB: '10/07/1995' },
+	    { Name: 'Shivangi', Age: 24, Salary: 45000, DOB: '03/08/1995' },
+	    { Name: 'Sukirti', Age: 16, Salary: 6000, DOB: '15/04/1996' },
+	    { Name: 'Karishma', Age: 21, Salary: 900, DOB: '10/08/1991' },
+	    { Name: 'Rajat', Age: 19, Salary: 2000, DOB: '19/09/1992' },
+	    { Name: 'yashu', Age: 28, Salary: 50000, DOB: '01/09/1995' }
+	];
+
+	console.log("1st.");
+	console.log("Employees= ",emp);
+	
+	console.log("2nd.");
+	for(var i=0;i < emp.length;i++)
+	{
+	    if(emp[i].Salary > 5000)
+	    console.log("Employees whose salary >5000 are = ",emp[i]);
+	}
+
+	console.log("3rd.");
+
+	for(var i=0;i < emp.length;i++)
+	{
+	    if(emp[i].Age < 20)
+	    console.log("Employees whose age <20 are = ",emp[i]);
+		else if(emp[i].Age >= 20 && emp[i].Age < 25)
+		console.log("Employees whose age >=20 and <25 are = ",emp[i]);
+		else
+		console.log("Employees whose age is >25 are = ",emp[i]);
+	}
+
+	console.log("4th.");
+
+	for(var i=0;i < emp.length;i++)
+	{
+	    if(emp[i].Salary < 1000 && emp[i].Age > 20)
+	    {
+	        var increment = emp[i].Salary * 5;
+	        console.log("Salary of ",emp[i].Name," after increment= ",increment);
+	    }
+	    
+	}
+}
+
+	
+	
+	
+
+	</script>
+</head>
+<body>
+<h1> Employee details</h1>
+<button onclick="Employee_Detail()">click me</button>
+</body>
+</html>

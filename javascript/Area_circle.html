@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Area of circle</title>
+	<script type="text/javascript">
+		function area_of_circle(radius) 
+		{
+			if(isNaN(radius))
+			{
+				alert("enter a number")
+			}
+			else
+			{
+				var result= (3.14*radius*radius).toFixed(3);
+				document.getElementById("p1").innerHTML=result;
+			}	
+		}
+
+	</script>
+	<style type="text/css">
+	h1{
+		color: DarkGreen;
+	}
+		button{
+			
+			background-colors: Orange;
+			font-size: 24px;
+			padding: 14px 40px;
+			border-radius: 25px;
+			border: 2px solid DarkGreen;
+			}
+	
+	</style>
+</head>
+<body>
+	<div><h1> ENTER THE RADIUS OF CIRCLE </h1><br>
+		<input type="text" id="number" required="required">
+	</div>
+	<br>
+	<button onclick= "area_of_circle(document.getElementById('number').value)"> calculate area </button>
+	<p id= "p1"></p>
+
+
+</body>
+</html>

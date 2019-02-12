@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>copying objects</title>
+	<script type="text/javascript">
+
+		var object1, object2
+		object1=
+		{
+			Firstname:"Shivangi", Lastname:"Jain"
+		};
+		
+		object2={};
+		function Copy_object(source, destination)
+		{
+			for(key in source)
+			{
+				destination[key]=source[key];
+			}
+		}
+		Copy_object(object1, object2);
+		console.log("object1 details: "+object1+"\n"+ "object2 details: "+object2);
+	</script>
+</head>
+<body>
+	<h1> This is copying the object1 data to object2.</h1>
+	<button onclick="Copy_object()">click me</button>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Interest</title>
+	<script type="text/javascript">
+		function interest() 
+		{
+			var amount = prompt("Please enter amount.");
+			if(amount!=null)
+			{
+
+				if(isNaN(amount))
+				{
+					alert("Must be a number!");
+				}
+				var No_of_years= prompt("Please enter no. of years.");
+				{
+					if(No_of_years!=null)
+					{
+						if(isNaN(No_of_years))
+							{
+								alert("Must be a number!");
+								return false;
+							}
+							var rate= prompt("Please enter the rate of interest.");
+							if(rate!=null)
+							{
+							if(isNaN(rate))
+								{
+									alert("Must be a number!");
+									return false;
+								}
+								var result= (amount*No_of_years*rate)/100;
+								document.getElementById("id1").innerHTML=result;
+
+
+							}
+					}
+				}
+
+			}
+		}
+			
+	</script>
+	<style type="text/css">
+		h1{
+			text-align: center;
+			color: DarkBlue;
+		}
+		div{
+			display: flex; 
+			justify-content: center;
+		}
+		button{
+			
+			background-color: #4CAF50;
+			font-size: 24px;
+			padding: 14px 40px;
+			border-radius: 8px;
+			}
+	
+	</style>
+</head>
+<body>
+	<h1> Simple Interest</h1>
+	<div>
+	<button onclick="interest()">Enter to find Simple Interest.</button></div>
+	<br>
+	<p> simple interest=</p>
+	<br>
+	<p id="id1"> </p>
+
+
+</body>
+</html>
