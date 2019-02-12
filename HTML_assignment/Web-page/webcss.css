@@ -1,28 +1,32 @@
 
 body{
 	
-	background-color:#473F3F;
+	background-color:#333333;
 }
 .div1{
+	padding-top: 6px;
 	width: 1200px;
 margin: 0 auto;
-background-color:  #4d4240;
+background-color:  #262626;
 }
 
 .para1{
-	padding-left: 50px;
-	
+	margin-top: 1px;
+padding-top: 0px;
+	padding-left: 115px;
+	font-weight: bold;
+	font-size: 25px;
 	color: #B7B6B6;
 }
 
 .topnav{
-	width: 1100px;
+	width: 960px;
 	margin: 0 auto;
-	background-color: #333;
+	background-color: #1a1a1a;
 	overflow: hidden;
 }
 .topnav a{
-
+	text-decoration: none;
 	color: #B7B6B6;
 	float: left;
 	text-align: center;
@@ -31,7 +35,7 @@ background-color:  #4d4240;
 }
 .center_part{
 	background-color:#FFFFFF;
-	height: 1010px;
+	height: 990px;
 	margin-top: 30px;
 	color: #FFFFFF;
 }
@@ -62,6 +66,11 @@ h2{
 }
 .para2{
 	color: #797373;
+	text-align: justify;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-transform: uppercase;
+	font-size: 12px;
 }
 .Line{
 	background-color: #FFFFFF;
@@ -78,6 +87,7 @@ h2{
 }
 .para3{
 	color: #797373;
+	font-weight: bold;
 }
 hr{
 	color: #FFFFFF;
@@ -90,23 +100,27 @@ color=#000000;
 #foot
 {
 	margin: 0 auto;
-	background-color:  #4d4240;
+	background-color:  #1a1a1a;
 	overflow: hidden;
 }
 #pleft{
 	float: left;
 	color: #B7B6B6;
 	font-size: 12px;
+	padding-left: 115px;
 }
 #pright{
 	float: right;
 	color: #B7B6B6;
 	font-size: 12px;
+	padding-right: 115px;
 }
 
 
 figcaption{
 	color: black;
+	text-align: center;
+	font-size: 15px;
 }
 .box {
 	width: 960px;  
