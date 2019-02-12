@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#p1{
+			position: static;
+			font-size: 20px;
+			border: 2px solid blue;
+		}
+		#heading2
+		{
+			position: relative;
+			left:-20px;
+		}
+		#parent1{
+			position: static;
+			font-size: 30px;
+			border: 2px solid red;
+		}
+		#child1{
+			position: absolute;
+			top:300px;
+			left: 30px;
+			font-size: 25px;
+			border: 5px solid green;
+		}
+		img{
+			position: relative;
+			left:-40px;
+			width: 400px;
+			height: 500px;
+		}
+		#fixed{
+			position: fixed;
+			border: 5px solid pink;
+			font-size: 25px;
+		}
+		#sticky{
+			position: sticky;
+			top:40px;
+		}
+	</style>
+	<title>positions</title>
+</head>
+<body>
+<h1> Positions in html</h1>
+<br>
+<p id="p1"> This is static position</p>
+<br>
+<br>
+<div id="fixed"> This is fixed position and will not change.</div>
+<h2 id ="heading2"> This is relative postion.</h2>
+<br>
+<p id="sticky">This is in sticky postion. As parent1 has static position, so it will position itself cosest to its parent and will not be positioned normally.</p>
+<br>
+
+<div id="parent1"> Position:static
+<p id="child1">This is in absolute postion. As parent1 has static position, so it will position itself cosest to its parent and will not be positioned normally.</p></div>
+
+
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<div><img src="ttn5.jpg"></div>
+
+</body>
+</html>
