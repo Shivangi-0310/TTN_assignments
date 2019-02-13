@@ -3,23 +3,23 @@
 <head>
 	<title>copying objects</title>
 	<script type="text/javascript">
-
-		var object1, object2
+		function Copy_object(){
+		var object1, object2;
 		object1=
 		{
 			Firstname:"Shivangi", Lastname:"Jain"
 		};
 		
 		object2={};
-		function Copy_object(source, destination)
-		{
-			for(key in source)
+			for(key in object1)
 			{
-				destination[key]=source[key];
+				object2[key]=object1[key];
 			}
+			console.log("object1 details: ",object1);
+			console.log("object2 details: ",object2);
+
 		}
-		Copy_object(object1, object2);
-		console.log("object1 details: "+object1+"\n"+ "object2 details: "+object2);
+		
 	</script>
 </head>
 <body>

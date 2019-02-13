@@ -18,41 +18,30 @@
 	console.log("Employees= ",emp);
 	
 	console.log("2nd.");
-	for(var i=0;i < emp.length;i++)
-	{
-	    if(emp[i].Salary > 5000)
-	    console.log("Employees whose salary >5000 are = ",emp[i]);
-	}
+	var result1= emp.filter(emp => emp.Salary>5000);
+	console.log(result1);
+
+
 
 	console.log("3rd.");
 
-	for(var i=0;i < emp.length;i++)
-	{
-	    if(emp[i].Age < 20)
-	    console.log("Employees whose age <20 are = ",emp[i]);
-		else if(emp[i].Age >= 20 && emp[i].Age < 25)
-		console.log("Employees whose age >=20 and <25 are = ",emp[i]);
-		else
-		console.log("Employees whose age is >25 are = ",emp[i]);
-	}
+	
+	    console.log("grouping Employees age wise")
+	   var result2= emp.filter(emp => emp.Age<20)
+	    console.log("Employees whose age <20 are = ",result2);
+		
+		var result3= emp.filter(emp => (emp.Age>=20&& emp.Age<25))
+		console.log("Employees whose age >=20 and <25 are = ",result3);
+
+		var result4= emp.filter(emp => emp.Age>25)
+		console.log("Employees whose age is >25 are = ",result4);
 
 	console.log("4th.");
 
-	for(var i=0;i < emp.length;i++)
-	{
-	    if(emp[i].Salary < 1000 && emp[i].Age > 20)
-	    {
-	        var increment = emp[i].Salary * 5;
-	        console.log("Salary of ",emp[i].Name," after increment= ",increment);
-	    }
-	    
+			var result5= emp.filter(emp => (emp.Salary<1000&& emp.Age>20));
+			var result6= result5.map(result5 => result5.Salary* 5);
+			console.log("Employee details whose age is >20 and salary <1000 is ", result5,"with salary increment",result6);	       
 	}
-}
-
-	
-	
-	
-
 	</script>
 </head>
 <body>
