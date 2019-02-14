@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Max height</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		   var max_HEIGHT = 0;
+			$("*").each(function() {
+	   		var h = $(this).height(); 
+	    	max_HEIGHT = h > max_HEIGHT ? h : max_HEIGHT;
+		});
+		alert("Maximum height is : " + max_HEIGHT);
+
+	  });
+	</script>	
+</head>
+<body>
+	<li>
+		<p> hello </p>
+		<h1> heading 1</h1>
+		<h2> heading 2 </h2>
+	</li>
+
+
+</body>
+</html>

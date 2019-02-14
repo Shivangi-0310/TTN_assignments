@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Using ON() method</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+
+			$("p").append("<h1 class= 'heading'> on method</h1>");
+		});
+			$("p").on("click","h1.heading", function()
+				{
+					$("p").append("<button style='background-color:green; color:white'> Dynamically added</button>");
+				})
+
+		});
+	</script>
+
+</head>
+<body>
+	<p> the data will be appended after this p tag</p>
+	<button>click me</button>
+
+</body>
+</html>

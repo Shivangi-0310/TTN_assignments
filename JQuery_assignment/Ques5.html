@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	  $("button").click(function(){
+	    $("#main > .target").css("font-size","30px");
+	  });
+	});
+	</script>
+</head>
+<body>
+
+<h2>Changing font-size of child having class .target</h2>
+<div id="main">
+
+<p class="target">It will be changed</p>
+</div>
+<p>This is another paragraph</p>
+
+<button>Click me to change font-size</button>
+
+</body>
+</html>

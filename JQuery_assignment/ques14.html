@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table</title>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document) .ready(function(){ $("td").each(function(){          
+            if($(this).text() > 10){
+            $(this).css({'background-color':'Blue'});
+            }
+          });
+        });
+    </script>
+    <style type="text/css">
+    
+        table, th, td 
+        {
+            margin: 0 auto;
+            text-align: center;
+            width:150px ;height:50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+  <table class="height">
+    <tr class="row">
+      <th>Column1</th>
+      <th>Column2</th> 
+      <th>Column3</th>
+    </tr>
+    <tr class="row">
+      <td class="row">1</td>
+      <td>2</td> 
+      <td>12</td>
+    </tr>
+    <tr class="row">
+      <td>11</td>
+      <td>9</td> 
+      <td>10</td>
+    </tr>
+    <tr class="row">
+      <td>7</td>
+      <td>9</td> 
+      <td>20</td>
+    </tr>
+    <tr class="row">
+      <td>26</td>
+      <td>2</td> 
+      <td>10</td>
+    </tr>
+  </table>
+    
+</body>
+</html>

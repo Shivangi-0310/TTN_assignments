@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	  $("#a").click(function(){
+	    $("#b").attr("disabled", "true");
+	    $("img").attr("height", "400");
+	  });
+	});
+	</script>
+</head>
+<body>
+
+	<img src="ttn5.jpg" alt="technology" width="400" height="200"><br>
+
+	<button id="a">disable button</button>
+	<button type="submit" id="b">I m Disabled</button>
+
+</body>
+</html>

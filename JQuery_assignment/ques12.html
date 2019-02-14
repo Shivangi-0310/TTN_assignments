@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bind() not on child</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("#div1").bind("click", function(e){
+				 if (e.target !== this)
+  				 return;
+				$("#div1").append("Click").css({"color":"red", "float":"left", "display":"inline"});
+			});
+			$("span").bind("click", function(e){
+				 
+				$("span").append("Click").css({"color":"red", "float":"left", "display":"inline"});
+			});
+			
+
+		});
+	</script>
+
+</head>
+<body>
+	<div id="div1" style="float: left; display: inline;"> Click on parent 
+		<button>child of div</button>
+	</div>
+	<br>
+	<span style="float: left; display: inline;"> Click on parent 
+		<button>child of span </button>
+	</div>
+	
+
+</body>
+</html>

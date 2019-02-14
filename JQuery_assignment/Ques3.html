@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class ends with</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("[class$='-new']").css("color","red");
+		});
+	</script>
+</head>
+<body>
+	<h3 class ="hello-new"> The color of this p element will be changed. </h3>
+	<h3 class ="new-class"> The color of this p element will not be changed. </h3>
+	<h1 class ="again-new"> The color of this p element will be changed. </h3>
+	<p class ="a-new"> The color of this p element will be changed. </h1>
+	<p class ="-newb"> The color of this p element will not be changed. </p>
+
+
+
+
+</body>
+</html>
