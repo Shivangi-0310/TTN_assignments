@@ -7,7 +7,7 @@
 		$(document).ready(function()
 		{
 			$("#div1").bind("click", function(e){
-				 if (e.target !== this)
+				 if (e.target == h)
   				 return;
 				$("#div1").append("Click").css({"color":"red", "float":"left", "display":"inline"});
 			});
@@ -24,7 +24,12 @@
 <body>
 	<div id="div1" style="float: left; display: inline;"> Click on parent 
 		<button>child of div</button>
+		<h1 id="h">heading1</h1>
+		<p id="p">para</h1>
+
 	</div>
+	<br>
+	<br>
 	<br>
 	<span style="float: left; display: inline;"> Click on parent 
 		<button>child of span </button>

@@ -6,25 +6,21 @@
 	<script type="text/javascript">
 		$(document).ready( function(){
 		$("#os").on("change", function() {
-			
-			$("button").click(function(){
 			var selected_value = $("#os").val();
 			$("div").append(selected_value);
 		});
   		});
-});
 	</script>
 
 </head>
 <body>
 	<select id="os">
-		<option value=""></option>
+		<option></option>
 		<option>Windows XP</option>
 		<option>Mac</option>
 	    <option>Linux</option>
 
 	</select>
-	<button>click here</button>
 	<div>
 	</div>
 </body>
