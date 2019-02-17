@@ -6,21 +6,21 @@
 	<script>
 		$(document).ready(function(){
 		   var max_HEIGHT = 0;
-			$("*").each(function() {
+			$("body").children().each(function() {
 	   		var h = $(this).height(); 
 	    	max_HEIGHT = h > max_HEIGHT ? h : max_HEIGHT;
-		});
+		})
 		alert("Maximum height is : " + max_HEIGHT);
-
 	  });
 	</script>	
 </head>
 <body>
-	<li>
+	
 		<p> hello </p>
-		<h1> heading 1</h1>
+		<h6> heading 6</h6>
 		<h2> heading 2 </h2>
-	</li>
+		<h1> heading 1 </h1>
+	
 
 
 </body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    
+  </script>
+  <style>
+ 
+  div
+  {
+    padding:30px;
+  }
+</style>
+
+</head>
+<body>
+	<div class="div1">
+		<div class="div2">
+			
+		</div>
+	
+	</div>
+	<script>
+		$(document).ready(function(){
+        	let Image_array=[];
+        	let i=0;
+        	Image_array.push("ttn.jpg");
+        	Image_array.push("ttn3.jpg");
+        	Image_array.push("ttn5.png");
+	        setInterval(function () {
+    	        i++;
+        	    if (i == Image_array.length) {
+            	        i = 0;
+               	}
+                $(".div2").fadeOut("slow", function () {
+                $(this).css({"background-image": "url(" + Image_array[i] + ")","width":"300px","height":"300px"});
+                $(this).fadeIn("slow");
+                });
+        }, 1000);
+    }
+    
+)
+	</script>
+</body>
+</html>
+

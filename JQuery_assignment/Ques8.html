@@ -7,11 +7,11 @@
 		$(document).ready(function(){
 			$("button").click(function(){
 
-			$("p").append("<h1 class= 'heading'> on method</h1>");
+			$("button").after("<button class= 'bt'>click</h1>");
 		});
-			$("p").on("click","h1.heading", function()
+			$(this).on("click","button", function()
 				{
-					$("*").append("<button style='background-color:green; color:white'> Dynamically added</button>");
+					$("button.bt").after("<button>dynamic element</button>");
 				})
 
 		});
@@ -19,8 +19,7 @@
 
 </head>
 <body>
-	<p> the data will be appended after this p tag</p>
-	<button>click me</button>
+	<button>main</button>
 
 </body>
 </html>
