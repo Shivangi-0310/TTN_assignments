@@ -1,5 +1,7 @@
 package Java2;
 
+import java.util.SortedMap;
+
 // 9.  Design classes having attributes for furniture where there are wooden chairs and tables,
 // metal chairs and tables.
 // There are stress and fire tests for each products.
@@ -95,6 +97,7 @@ class Table extends Furniture {
 
 public class MainClass {
     public static void main(String[] args) {
+        System.out.println("Fire and stress tests \n");
 
         Chair c1 = new Chair("wooden", 5, "red", "circular");
         Chair c2 = new Chair("metal", 7, "blue", "square");
