@@ -1,8 +1,10 @@
 package Java2;
 
+// 2. WAP to sorting string without using string Methods?.
+
 import java.util.Scanner;
 
-//Question 2
+
 public class StringSort {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
