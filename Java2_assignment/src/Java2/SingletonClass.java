@@ -1,5 +1,7 @@
 package Java2;
-//Question 4
+
+// 4. WAP to create singleton class.
+
 public class SingletonClass {
 
    private static SingletonClass singletonClass=null;
