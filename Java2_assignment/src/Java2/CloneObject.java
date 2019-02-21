@@ -1,6 +1,6 @@
 package Java2;
 
-// Question 5b
+// 5. WAP to show object cloning in java using cloneable and copy constructor both.
 
 public class CloneObject implements Cloneable {
     int studentId;
