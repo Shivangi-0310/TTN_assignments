@@ -1,5 +1,7 @@
 package Java2;
 
+//12.What will be the  output on new Child(); ?
+
 public class Question12 {
     public static void main(String[] args) {
 
