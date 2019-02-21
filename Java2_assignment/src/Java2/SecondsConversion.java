@@ -1,6 +1,6 @@
 package Java2;
 
-//Question 7
+// 7. WAP to convert seconds into days, hours, minutes and seconds.
 
 import java.util.Scanner;
 
