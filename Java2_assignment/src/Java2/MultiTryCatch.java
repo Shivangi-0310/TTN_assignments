@@ -1,6 +1,6 @@
 package Java2;
 
-// Question 6
+//  6. WAP showing try, multi-catch and finally blocks.
 
 public class MultiTryCatch {
     public static void main(String[] args) {
