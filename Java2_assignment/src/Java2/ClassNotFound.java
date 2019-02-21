@@ -1,5 +1,7 @@
 package Java2;
-// Question 3b
+
+// 3. WAP to produce NoClassDefFoundError and ClassNotFoundException exception.
+
 
 public class ClassNotFound {
 

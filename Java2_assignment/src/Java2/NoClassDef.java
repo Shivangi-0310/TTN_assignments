@@ -1,11 +1,12 @@
 package Java2;
 
- //Question 3a
+// 3. WAP to produce NoClassDefFoundError and ClassNotFoundException exception.
+
 class Show
 {
     void show()
     {
-        System.out.println("hello!");
+        System.out.println("hello");
     }
 }
 
