@@ -11,6 +11,26 @@ public class LibraryManagement {
     }
 
 }
+class Librarian{
+    int librarian_id;
+    int librarian_name;
+
+    public int getLibrarian_id() {
+        return librarian_id;
+    }
+
+    public void setLibrarian_id(int librarian_id) {
+        this.librarian_id = librarian_id;
+    }
+
+    public int getLibrarian_name() {
+        return librarian_name;
+    }
+
+    public void setLibrarian_name(int librarian_name) {
+        this.librarian_name = librarian_name;
+    }
+}
 class Library {
 
     int libraryId;
@@ -35,7 +55,7 @@ class Library {
     }
 
     public boolean deleteBook (Book book) {
-        if (!books.containsValue(book)) {
+        if (books.containsValue(book)) {
             books.remove(book.id);
             return true;
         }
@@ -52,7 +72,7 @@ class Library {
     }
 
     public boolean deleteUser (User user) {
-        if (!users.containsValue(user)) {
+        if (users.containsValue(user)) {
             users.remove(user.userId);
             return true;
         }
