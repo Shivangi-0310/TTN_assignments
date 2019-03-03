@@ -41,7 +41,7 @@ class Pizza implements Toppings {
 
     @Override
     public String toString() {
-        return "DesignPatterns.Pizza{" +
+        return "Pizza{" +
                 "size='" + size + '\'' +
                 ", base='" + base + '\'' +
                 ", sauce='" + sauce + '\'' +
@@ -95,7 +95,7 @@ class OliveToppings implements Toppings{
 
     @Override
     public String decorateWithToppings() {
-        return toppings.decorateWithToppings()+"\n"+" DesignPatterns.Toppings with olive";
+        return toppings.decorateWithToppings()+"\n"+"Toppings with olive";
     }
 
 }
@@ -109,7 +109,7 @@ class CapsicumToppings implements Toppings {
 
     @Override
     public String decorateWithToppings() {
-        return toppings.decorateWithToppings()+"\n"+" DesignPatterns.Toppings with Capsicum";
+        return toppings.decorateWithToppings()+"\n"+"Toppings with Capsicum";
     }
 
 }
@@ -123,7 +123,7 @@ class OnionToppings implements Toppings{
 
     @Override
     public String decorateWithToppings() {
-        return toppings.decorateWithToppings()+"\n"+" DesignPatterns.Toppings with onion";
+        return toppings.decorateWithToppings()+"\n"+" Toppings with onion";
     }
 }
 
