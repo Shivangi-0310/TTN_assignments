@@ -51,7 +51,7 @@ class StudentDetails{
 
     @Override
     public String toString() {
-        return "DesignPatterns.StudentDetails{" +
+        return "StudentDetails{" +
                 "studentId=" + studentId +
                 ", studentName='" + studentName + '\'' +
                 ", studentAge=" + studentAge +
