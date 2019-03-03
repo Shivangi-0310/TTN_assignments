@@ -21,7 +21,7 @@ abstract class Car {
 
     @Override
     public String toString() {
-        return "DesignPatterns.Car{" +
+        return "Car{" +
                 "carType=" + carType +
                 ", location=" + location +
                 '}';
