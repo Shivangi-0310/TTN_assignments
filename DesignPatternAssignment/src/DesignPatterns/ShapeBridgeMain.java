@@ -44,7 +44,7 @@ class Square extends Shape {
 
     void getColor() {
         color.getColorForShape();
-        System.out.println("DesignPatterns.Square\n");
+        System.out.println("Square\n");
 
     }
 }
@@ -56,7 +56,7 @@ class Triangle extends Shape {
 
     void getColor() {
         color.getColorForShape();
-        System.out.print("DesignPatterns.Triangle \n");
+        System.out.print("Triangle \n");
 
     }
 
