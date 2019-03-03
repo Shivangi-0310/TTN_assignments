@@ -8,7 +8,7 @@ class Triangle1 implements PolygonType {
 
     @Override
     public String getPolygonType() {
-        return "Its a 3 sided polygon :: DesignPatterns.Triangle";
+        return "Its a 3 sided polygon :: Triangle";
     }
 }
 
@@ -16,7 +16,7 @@ class Square1 implements PolygonType {
 
     @Override
     public String getPolygonType() {
-        return "Its a 4 sided polygon :: DesignPatterns.Square";
+        return "Its a 4 sided polygon :: Square";
     }
 }
 
@@ -24,7 +24,7 @@ class Pentagon implements PolygonType {
 
     @Override
     public String getPolygonType() {
-        return "Its a 5 sided polygon :: DesignPatterns.Pentagon";
+        return "Its a 5 sided polygon :: Pentagon";
     }
 }
 
@@ -32,7 +32,7 @@ class Hexagon implements PolygonType {
 
     @Override
     public String getPolygonType() {
-        return "Its a 6 sided polygon :: DesignPatterns.Hexagon";
+        return "Its a 6 sided polygon :: Hexagon";
     }
 }
 
@@ -40,7 +40,7 @@ class Heptagon implements PolygonType {
 
     @Override
     public String getPolygonType() {
-        return "Its a 7 sided polygon :: DesignPatterns.Heptagon";
+        return "Its a 7 sided polygon :: Heptagon";
     }
 }
 
@@ -48,7 +48,7 @@ class Octagon implements PolygonType {
 
     @Override
     public String getPolygonType() {
-        return "Its a 8 sided polygon :: DesignPatterns.Octagon";
+        return "Its a 8 sided polygon :: Octagon";
     }
 }
 
@@ -56,7 +56,7 @@ class NotAPolygon implements PolygonType {
 
     @Override
     public String getPolygonType() {
-        return "DesignPatterns.Polygon not added";
+        return "Polygon not added";
     }
 }
 
