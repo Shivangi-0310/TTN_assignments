@@ -44,7 +44,7 @@ class JavaEmployeeDirectory implements EmployeeDirectory {
 
     @Override
     public String toString() {
-        return "DesignPatterns.JavaEmployeeDirectory{" +
+        return "JavaEmployeeDirectory{" +
                 "employeeId=" + employeeId +
                 ", EmployeeName='" + EmployeeName + '\'' +
                 ", currentProject='" + currentProject + '\'' +
@@ -53,7 +53,7 @@ class JavaEmployeeDirectory implements EmployeeDirectory {
 
     @Override
     public void showDirectoryDetails() {
-        System.out.println("DesignPatterns.JavaEmployeeDirectory{" +
+        System.out.println("JavaEmployeeDirectory{" +
                 "employeeId=" + employeeId +
                 ", EmployeeName='" + EmployeeName + '\'' +
                 ", currentProject='" + currentProject + '\'' +
