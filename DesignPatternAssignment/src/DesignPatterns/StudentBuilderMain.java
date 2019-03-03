@@ -1,4 +1,6 @@
-package DesignPatterns;// DesignPatterns.Student POJO class
+package DesignPatterns;
+
+//Student POJO class
 
 class Student {
     private int studentId;
@@ -77,7 +79,7 @@ class Student {
 
     @Override
     public String toString() {
-        return "DesignPatterns.Student details are :: \n" +
+        return "Student details are :: \n" +
                 "studentId= " + studentId + "\n" +
                 "studentName= " + studentName + "\n" +
                 "studentAge= " + studentAge + "\n" +
