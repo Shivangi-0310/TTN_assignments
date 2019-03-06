@@ -2,3 +2,6 @@ gitignore.odt
 .~*
 efg
 abc
+.idea
+.gradle
+/build/
