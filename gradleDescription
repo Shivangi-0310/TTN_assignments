@@ -1,0 +1,50 @@
+
+1) Look up java plugin documentation. Make changes in manifest to make it executable with correct class. When run using java -jar JAR_NAME_HERE the output should be text "Hello World" on the console. 
+
+description:
+references used- stackoverflow, gradle documentation and java-plugin documentation.
+Firstly added java plugin to build.gradle. Then created a structure- src>main>java>program1.java.
+Added jar manifest in build.gradle after that build project which created build folder and .class files inside it. Created a jar using the jar option given by java-plugin.
+command:
+jar tf jar_name
+java -jar jar_name
+Which displayed output of.java file.
+
+
+2) look up idea plugin. make changes in build.gradle so that the sources of src/main/java as well as src/main/java2 are taken as sources. Ensure that when you make JAR file class files in both are added to the JAR. This will teach you how projects with non-conventional structure can be used with gradle.
+description:
+references used- stackoverflow, gradle documentation and java-plugin documentation.
+Firstly added java plugin to build.gradle. 
+Then created a structure- src>main>java>program1.java and  src>main>java2>program2.java
+Added jar manifest and source set having path of both java files separated by commas in build.gradle after that build project which created build folder and .class files inside it. Created a jar using the jar option given by java-plugin.
+
+command:
+jar tf jar_name
+java -jar jar_name
+Which displayed output of.java file.
+
+
+
+3) add 2 files file1.xml and file1.txt in src/main/resources manually. make changes so that when creating jar only file1.xml is added to the jar. 
+description:
+references used- stackoverflow, gradle documentation and java-plugin documentation.
+Firstly added java plugin to build.gradle. 
+Then created a structure- src>main>java>program1.java, src>main>resources>file1.xml and src>main>resources>file2.java
+Added jar manifest and source set having path of xml file and excluded text file in build.gradle after that build project which created build folder and .class files inside it. Created a jar using the jar option given by java-plugin.
+
+Ran command:
+jar tf jar_name
+java -jar jar_name
+Which displayed output of.java file.
+
+4) find how to what is an uberjar. Make changes so you can use commons lang3 StringUtil in your jar. Make this uber jar executable. The output should be text but that should be using the StringUtils class of commons lang3
+description:
+references used- stackoverflow, gradle documentation documentation amd read about fat jar.
+added jcentre repository and added its congiguration to jar manifest
+
+5) Find a maven repository and add it as a repository. You can use bintray, jcenter
+added jcentre repository in build.gradle
+
+
+6) Write a task in file "mytasks.gradle" and use it in your build.gradle
+added another gradle file using 'apply plugin: otherFilePath'
