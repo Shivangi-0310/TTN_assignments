@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--Constructor ref by inner bean-->
+    <bean id="restaurant" class="demo.Restaurant">
+            <property name="hotDrinks"><bean id="tea2" class="demo.Tea"/>    </property>
+    </bean>
+
+    <!--...........................................................................-->
+    <!--Setter ref by external bean-->
+    <bean id="teaRestaurant" class="demo.Restaurant">
+        <property name="hotDrinks" ref="tea"/>
+        <!--<constructor-arg ref="tea"/>-->
+    </bean>
+    <bean id="tea" class="demo.Tea"></bean>
+    <!--...........................................................................-->
+    <!--Setter ref by external bean-->
+    <bean id="expressTeaRestaurant" class="demo.Restaurant">
+        <property name="hotDrinks" ref="expressTea"/>
+    </bean>
+    <bean id="expressTea" class="demo.ExpressTea"></bean>
+
+    <!--...........................................................................-->
+    <!--autowire byName-->
+    <bean id="restaurantWithTea" class="demo.Restaurant" autowire="byName" />
+    <bean id="hotDrinks" class="demo.Tea" ></bean>
+    <!--...........................................................................-->
+    <!--autowire byType-->
+    <bean id="restaurantWithHotTea" class="demo.Restaurant" autowire="byType"/>
+    <bean id="hotDrink1" class="demo.Tea" primary="true"></bean>
+
+    <!--...........................................................................-->
+    <!--autowire constructor-->
+
+    <bean id="tea1" class="demo.Tea" scope="prototype"/>
+
+    <bean id="restaurantWithHotDrink" class="demo.Restaurant">
+        <property name="hotDrinks" ref="tea1"></property>
+    </bean>
+
+    <bean id="restaurantWithHotDrink1" class="demo.Restaurant">
+        <property name="hotDrinks" ref="tea1"></property>
+    </bean>
+
+
+</beans>
