@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+<!--Complex-config-->
+    <bean id="complexBean" class="demo.Complex">
+        <property name="studentName">
+            <list>
+                <value>Aakash</value>
+                <value>Yashu</value>
+                <value>Samayra</value>
+        </list>
+        </property>
+        <property name="studentMarks">
+            <set>
+                <value>100</value>
+                <value>98</value>
+                <value>99</value>
+        </set>
+        </property><property name="subjectWithCode">
+            <map>
+                <entry key="101" value="Maths"/>
+                <entry key="102" value="CS"/>
+                <entry key="103" value="Java"/>
+
+        </map>
+        </property>
+
+    </bean>
+
+</beans>
