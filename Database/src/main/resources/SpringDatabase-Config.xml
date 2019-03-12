@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="database1" class="Demo.DatabaseConnection">
+        <property name="port" value="3306" />
+        <property name="name" value="mySQL" />
+    </bean>
+    <!--<bean id="database2" class="Demo.DatabaseConnection">-->
+        <!--<constructor-arg name="port" value="1521"/>-->
+        <!--<constructor-arg name="name" value="Oracle"/>-->
+    <!--</bean>-->
+</beans>
