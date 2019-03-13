@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--INNER BEAN-->
+    <bean id="restaurantWithTea" class="com.demo.Restaurant">
+        <constructor-arg>
+            <bean id="tea" class="com.demo.Tea"/>
+        </constructor-arg>
+    </bean>
+
+    <!--Using Alias-->
+    <bean id="restaurantWithExpressTea" class="com.demo.Restaurant" name="expressTea, blackTea">
+        <constructor-arg>
+            <bean id="expressTea" class="com.demo.ExpressTea"/>
+        </constructor-arg>
+    </bean>
+    <!--Bean Inheritance-->
+    <bean id="pointA" class="com.demo1.Point">
+        <property name="xAxis" value="10"/>
+        <property name="yAxis" value="20"/>
+    </bean>
+
+    <bean id="pointB" class="com.demo1.Point">
+        <property name="xAxis" value="30"/>
+        <property name="yAxis" value="40"/>
+    </bean>
+    <bean id="pointC" class="com.demo1.Point">
+        <property name="xAxis" value="50"/>
+        <property name="yAxis" value="60"/>
+    </bean>
+    <bean id="parentTriangle" class="com.demo1.Triangle">
+        <property name="pointA" ref="pointA"/>
+    </bean>
+    <bean id="triangle" class="com.demo1.Triangle" parent="parentTriangle">
+        <property name="pointB" ref="pointB"/>
+        <property name="pointC" ref="pointC"/>
+    </bean>
+
+    <!--Init and destroy methods -->
+    <bean id="triangleMethods" class="com.demo1.Triangle" init-method="myInit" destroy-method="myDestroy"></bean>
+
+
+</beans>
