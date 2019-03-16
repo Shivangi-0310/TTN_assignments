@@ -1,0 +1,16 @@
+Question 1.Create database springDemo with  user table with fields
+          (a) username
+          (b) password
+          (c) name
+          (d) age
+          (e) dob
+Question 2. Insert few records inside user Tables
+
+database commands:
+
+create database jbdbcConnection;
+use jbdbcConnection;
+create table user (username varchar(50), password varchar(30), name varchar(20), age int, dob Date);
+insert into user values("aakash" "1234", "biotech", 23, "1995-07-10");
+ 
+
