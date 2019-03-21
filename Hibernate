@@ -1,0 +1,12 @@
+
+Database queries:
+
+create database hibernateDB;
+use hibernateDB;
+show tables;
+select * from Author;
+select * from Book;
+select * from Novel;
+drop database hibernateDB;
+
+
