@@ -55,6 +55,7 @@ public class Main {
         Author author3 = new Author();
         Author author4 = new Author();
         Author author5 = new Author();
+        Author author6 = new Author();
 //   ---------------------------------------
 //        cascading
         Novel novel = new Novel();
@@ -64,7 +65,9 @@ public class Main {
 
 
 //   ---------------------------------------
-//        bidirectonal one to may
+
+//        bidirectonal one to many
+
 //        book6.setAuthor(author1);
 //        book7.setAuthor(author1);
 //        book2.setAuthor(author3);
@@ -162,6 +165,16 @@ public class Main {
 
 
 //  ---------------------------------------
+        //   author5.setId(6);
+        author6.setFirstname("ABC");
+        author6.setLastname("Christie");
+        author6.setDob(new Date(19900709));
+        author6.setAge(28);
+        author6.setAddress(address2);
+        author6.setSubjects(subjects);
+//      author5.setBook(book5);
+//        author5.getBook().add(book2);
+        //author5.getBookName1().add(book1);
 
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
@@ -184,20 +197,22 @@ public class Main {
         session.save(book7);
         session.save(novel);
         session.save(novel1);
+
+//     Question 16. cascade save
 //      session.persist(author);
 
 //        read operation
-//        Author author3 = session.get(Author.class, 1);
+        Author author10 = session.get(Author.class, 1);
 //
 //        delete operation
-//        session.delete(author3);
+        session.delete(author6);
 //
 //        update operation
-//        author1.setAge(50);
-//        session.update(author1);
+        author1.setAge(50);
+        session.update(author1);
 
         session.getTransaction().commit();
         session.close();
-//        System.out.println("read operation on author>>>>  " + author);
+      System.out.println("read operation on author>>>>  " + author10);
     }
 }

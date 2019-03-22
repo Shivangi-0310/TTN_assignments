@@ -19,10 +19,7 @@ import java.util.*;
 //Question 12. Introduce a List of subjects for author.
 //Question 13. Persist 3 subjects for each author.
 //Question 14. Create an Entity book with an instance variable bookName.
-//Question 15. Implement One to One mapping between Author and Book.
-//Question 16. Implement One to Many Mapping between Author and Book(Unidirectional,
-// BiDirectional and without additional table ) and  implement cascade save.
-//Question 17. Implement Many to Many Mapping between Author and Book.
+
 
 
 @Entity
@@ -30,7 +27,7 @@ public class Author {
     @Column(name = "Author_Id")
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    //@GeneratedValue(strategy = GenerationType.TABLE)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
             Integer id;
     @Column(name = "Author_firstname")
     String firstname;
@@ -44,20 +41,28 @@ public class Author {
     @Embedded
     Address address;
     @ElementCollection
-    Set<String> subjects = new HashSet<String>();
+    Set<String> subjects = new HashSet<>();
+
+//    Question 15. Implement One to One mapping between Author and Book.
 
 //    @OneToOne
 //    @JoinColumn(name = "Book_join_column")
 //    Book book;
 
+// Question 16. Implement One to Many Mapping between Author and Book(Unidirectional,
+//// BiDirectional and without additional table ) and  implement cascade save.
+
 //    @OneToMany //unidirectional and bidirectional
 //    @JoinTable(joinColumns = @JoinColumn(name="Author_id")
 //            ,inverseJoinColumns = @JoinColumn(name = "Book_ID"))
+
 //    @OneToMany(mappedBy = "author")  // without additional table
 //    Set<Book> book= new HashSet<>();
 
+//    Question 17. Implement Many to Many Mapping between Author and Book.
     @ManyToMany
     List<Book> book = new ArrayList<>();
+//    cascading
     @OneToMany(cascade = CascadeType.PERSIST)
     List<Novel> novels = new ArrayList<>();
 
