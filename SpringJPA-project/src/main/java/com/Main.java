@@ -26,5 +26,6 @@ public class Main {
         service.findFirstnameAndLAstnameByAge();
         service.findAllDetail();
         service.countPersonByFirstname();
+        service.sortUsingMethod();
     }
 }

@@ -3,6 +3,7 @@ package com.service;
 import com.entity.Person;
 import com.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -157,10 +158,14 @@ public class PersonService {
 
     public void countPersonByFirstname() {
         System.out.println("count person whose firstname = Peter>>>>>>>>>>>");
-        Integer count= personRepository.countByName("Peter");
-        System.out.println("total person with name peter >>> "+count);
+        Integer count = personRepository.countByName("Peter");
+        System.out.println("total person with name peter >>> " + count);
+    }
 
-
+    public void sortUsingMethod() {
+        System.out.println("sort all person by id of age >25 in descending order >>>>>>>");
+        List<Person> people= personRepository.findByAgeGreaterThanOrderByIdDesc(25);
+        System.out.println(people);
     }
 
 
