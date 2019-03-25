@@ -166,24 +166,84 @@ public class PersonService {
 
     public void sortUsingMethod() {
         System.out.println("sort all person by id of age >25 in descending order >>>>>>>");
-        List<Person> people= personRepository.findByAgeGreaterThanOrderByIdDesc(25);
+        List<Person> people = personRepository.findByAgeGreaterThanOrderByIdDesc(25);
         System.out.println(people);
     }
 
-    public void showPersonUsingSortClass(){
-        List<Person> people=personRepository.findAllPersonByAgeSort(new Sort(Sort.Direction.DESC, "id"));
+    public void showPersonUsingSortClass() {
+        List<Person> people = personRepository.findAllPersonByAgeSort(new Sort(Sort.Direction.DESC, "id"));
         System.out.println(people);
     }
 
-    public void applyPagination(){
+    public void applyPagination() {
         System.out.println("apply pagination>>>>>>>>>>>>>>>>>>>>>>>>>.");
-        Page<Person> personPage= personRepository
+        Page<Person> personPage = personRepository
                 .findAll(
-                        new PageRequest(0,3,
-                                new Sort(Sort.Direction.DESC,"id")));
+                        new PageRequest(0, 3,
+                                new Sort(Sort.Direction.DESC, "id")));
 
-        List<Person> people= personPage.getContent();
+        List<Person> people = personPage.getContent();
         System.out.println(people);
     }
 
+    public void countByName() {
+        System.out.println("using count");
+        System.out.println("count by name peter is:::" + personRepository.countByFirstname("peter"));
+    }
+
+    public void findDistinctByLastname() {
+        System.out.println("using DISTINCT");
+        List<Person> people = personRepository.findDistinctByLastname("sharma");
+        System.out.println(people);
+    }
+
+    public void findByFirstnameOrAge() {
+        System.out.println("usingOr");
+        List<Person> people = personRepository.findByFirstnameOrAge("aakash", 25);
+        System.out.println(people);
+    }
+
+    public void findByFirstnameAndAge() {
+        System.out.println("usingAnd");
+        List<Person> people = personRepository.findByFirstnameAndAge("ankit", 25);
+        System.out.println(people);
+    }
+
+    public void findByAgeBetween() {
+        System.out.println("usingBetween");
+        List<Person> people = personRepository.findByAgeBetween(23, 29);
+        System.out.println(people);
+    }
+
+    public void findBySalaryLessThan() {
+        System.out.println("usingLessThan");
+        List<String> people = personRepository.findBySalaryLessThan(60000);
+        System.out.println(people);
+    }
+
+    public void findBySalaryGreaterThan() {
+        System.out.println("usingGreaterThan");
+        List<String> people = personRepository.findBySalaryGreaterThan(60000);
+        System.out.println(people);
+    }
+
+    public void findByFirstnameLike() {
+        System.out.println("usingLike");
+        List<Person> people = personRepository.findByFirstnameLike("%aka%");
+        System.out.println(people);
+
+    }
+
+    public void findByFirstnameNot() {
+        System.out.println("usingNot");
+        List<String> people = personRepository.findByFirstnameNot("peter");
+        System.out.println(people);
+    }
+
+    public void findByAgeIn() {
+        System.out.println("usingIN");
+        List<Person> people = personRepository.findByAgeIn(Arrays.asList(23,29));
+        System.out.println(people);
+    }
+    
 }

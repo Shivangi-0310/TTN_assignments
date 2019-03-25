@@ -38,5 +38,27 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     Page<Person> findAll(Pageable pageable);
 
+//    Question. 10 ---------->
+
+    Integer countByFirstname(String name);
+
+    List<Person> findDistinctByLastname(String lastname);
+
+    List<Person> findByFirstnameOrAge(String name, Integer age);
+
+    List<Person> findByFirstnameAndAge(String name, Integer age);
+
+    List<Person> findByAgeBetween(Integer min, Integer max);
+
+    List<String> findBySalaryLessThan(Integer salary);
+
+    List<String> findBySalaryGreaterThan(Integer salary);
+
+    List<Person> findByFirstnameLike(String name);
+
+    List<String> findByFirstnameNot(String name);
+
+    List<Person> findByAgeIn(List<Integer> age);
+
 
 }

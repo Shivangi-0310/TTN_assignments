@@ -30,5 +30,16 @@ public class Main {
         service.showPersonUsingSortClass();
         service.applyPagination();
 
+        //Question 10::
+        service.countByName();
+        service.findDistinctByLastname();
+        service.findByFirstnameOrAge();
+        service.findByFirstnameAndAge();
+        service.findByAgeBetween();
+        service.findBySalaryLessThan();
+        service.findBySalaryGreaterThan();
+        service.findByFirstnameLike();
+        service.findByFirstnameNot();
+        service.findByAgeIn();
     }
 }
