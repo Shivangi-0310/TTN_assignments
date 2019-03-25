@@ -41,7 +41,9 @@ public class PersonService {
                 Person.create("anvi", "gupta", 27, 98000),
                 Person.create("peter", "jonas", 43, 78000),
                 Person.create("peter", "sharma", 33, 50000),
-                Person.create("navya", "kha3", 29, 40000));
+                Person.create("navya", "khan", 29, 40000),
+                Person.create("ankit", "sharma", 25, 78000),
+                Person.create("pushkar", "mudgal", 25, 30000));
     }
 
     // findAll
@@ -114,14 +116,14 @@ public class PersonService {
 
     public void findPersonByFirstname() {
         System.out.println("find by first name>>>>>>> ");
-        List<Person> people= personRepository.findByFirstname("Peter");
+        List<Person> people = personRepository.findByFirstname("Peter");
         System.out.println(people);
     }
 
     public void findPersonByLastname() {
         System.out.println("find by last name>>>>>>> ");
 
-        List<Person> people= personRepository.findByLastname("sharma");
+        List<Person> people = personRepository.findByLastname("sharma");
         System.out.println(people);
 
     }
@@ -129,9 +131,17 @@ public class PersonService {
     public void findPersonById() {
         System.out.println("find by id>>>>>>> ");
 
-        Person people= personRepository.findById(1);
+        Person people = personRepository.findById(1);
         System.out.println(people);
     }
+
+    public void findFirstnameByAge() {
+        System.out.println("6. find firstname of person whose age=25 >>>>>>> ");
+        List<String> personFirstName = personRepository.findByAge(25);
+        System.out.println(personFirstName);
+    }
+
+   
 
 
 }
