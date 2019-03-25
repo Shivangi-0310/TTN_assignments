@@ -5,8 +5,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import javax.xml.ws.RequestWrapper;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface PersonRepository extends CrudRepository<Person, Integer> {
@@ -20,5 +21,7 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
     @Query("select firstname, lastname from Person where age=:age")
     String[] findFnameAndLname(@Param("age") Integer age);
 
+    @Query("select p from Person p where p.age =:age")
+    List<Object[]> findAllDetail(@Param("age") Integer age);
 
 }

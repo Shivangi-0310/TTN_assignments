@@ -24,5 +24,6 @@ public class Main {
         service.findPersonById();
         service.findFirstnameByAge();
         service.findFirstnameAndLAstnameByAge();
+        service.findAllDetail();
     }
 }
