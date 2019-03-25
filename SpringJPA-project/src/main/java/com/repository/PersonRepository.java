@@ -24,4 +24,9 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
     @Query("select p from Person p where p.age =:age")
     List<Object[]> findAllDetail(@Param("age") Integer age);
 
+    @Query("select count(*) from Person where firstname=:firstname")
+    Integer countByName(@Param("firstname") String name);
+
+
+
 }

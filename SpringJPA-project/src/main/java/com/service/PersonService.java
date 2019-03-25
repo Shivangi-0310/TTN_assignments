@@ -148,10 +148,19 @@ public class PersonService {
             System.out.println(s);
         }
     }
-    public void findAllDetail(){
+
+    public void findAllDetail() {
         System.out.println("Get complete information of the Employee whose age= 25>>>>>>>>>>>");
-        List<Object[]> personDetail= personRepository.findAllDetail(25);
+        List<Object[]> personDetail = personRepository.findAllDetail(25);
         System.out.println(personDetail);
+    }
+
+    public void countPersonByFirstname() {
+        System.out.println("count person whose firstname = Peter>>>>>>>>>>>");
+        Integer count= personRepository.countByName("Peter");
+        System.out.println("total person with name peter >>> "+count);
+
+
     }
 
 
