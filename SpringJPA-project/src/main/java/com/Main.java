@@ -27,5 +27,7 @@ public class Main {
         service.findAllDetail();
         service.countPersonByFirstname();
         service.sortUsingMethod();
+        service.showPersonUsingSortClass();
+
     }
 }

@@ -31,7 +31,8 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     List<Person> findByAgeGreaterThanOrderByIdDesc(Integer age);
 
-
+    @Query("select p from Person p where p.age>25")
+    List<Person> findAllPersonByAgeSort(Sort sort);
 
 
 }

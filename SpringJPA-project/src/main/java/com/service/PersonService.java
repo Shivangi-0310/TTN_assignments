@@ -168,5 +168,11 @@ public class PersonService {
         System.out.println(people);
     }
 
+    public void showPersonUsingSortClass(){
+        List<Person> people=personRepository.findAllPersonByAgeSort(new Sort(Sort.Direction.DESC, "id"));
+        System.out.println(people);
+    }
+
+
 
 }
