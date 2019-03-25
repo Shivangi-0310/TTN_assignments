@@ -73,34 +73,33 @@ public class PersonService {
     }
 
     //delete by id
-    public void deletePerson() {
+    /*public void deletePerson() {
         System.out.println("----delete()----");
         System.out.println("person count before deletion>> " + personRepository.count());
         personRepository.delete(7);
         System.out.println("person count after deletion>> " + personRepository.count());
 
-    }
+    }*/
 
     //delete by ref
-    public void deletePersonByEntityRef() {
+    /*public void deletePersonByEntityRef() {
         System.out.println("----delete()---->>deletePersonByEntityRef");
         System.out.println("person count before deletion>> " + personRepository.count());
         Person person = personRepository.findOne(6);
         personRepository.delete(person);
         System.out.println("person count after deletion>> " + personRepository.count());
-
-    }
+    }*/
 
     // delete via iterable
 
-     public void deletePersonByIterable() {
+    /*public void deletePersonByIterable() {
         System.out.println("----delete()---->>deletePersonByIterable");
         System.out.println("person count before deletion>> " + personRepository.count());
-        Iterable<Person> person= personRepository.findAll();
+        Iterable<Person> person = personRepository.findAll();
         personRepository.delete(person);
         System.out.println("person count after deletion>> " + personRepository.count());
 
-    }
+    }*/
 
     // deleteAll
 
@@ -112,6 +111,27 @@ public class PersonService {
 
     }*/
 
-    
+
+    public void findPersonByFirstname() {
+        System.out.println("find by first name>>>>>>> ");
+        List<Person> people= personRepository.findByFirstname("Peter");
+        System.out.println(people);
+    }
+
+    public void findPersonByLastname() {
+        System.out.println("find by last name>>>>>>> ");
+
+        List<Person> people= personRepository.findByLastname("sharma");
+        System.out.println(people);
+
+    }
+
+    public void findPersonById() {
+        System.out.println("find by id>>>>>>> ");
+
+        Person people= personRepository.findById(1);
+        System.out.println(people);
+    }
+
 
 }

@@ -15,10 +15,13 @@ public class Main {
         service.findOnePerson();
         service.existPerson();
         service.countPerson();
-        service.deletePerson();
-        service.deletePersonByEntityRef();
-        service.deletePersonByIterable();
+//        service.deletePerson();
+//        service.deletePersonByEntityRef();
+//        service.deletePersonByIterable();
 //        service.deleteAllPerson();
+        service.findPersonByFirstname();
+        service.findPersonByLastname();
+        service.findPersonById();
 
     }
 }
