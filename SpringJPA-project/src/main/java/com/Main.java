@@ -23,6 +23,6 @@ public class Main {
         service.findPersonByLastname();
         service.findPersonById();
         service.findFirstnameByAge();
-       
+        service.findFirstnameAndLAstnameByAge();
     }
 }

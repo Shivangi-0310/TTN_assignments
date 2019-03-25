@@ -141,6 +141,13 @@ public class PersonService {
         System.out.println(personFirstName);
     }
 
+    public void findFirstnameAndLAstnameByAge() {
+        System.out.println("find firstname, lastname of person whose age=25 >>>>>>> ");
+        String[] personFirstAndLastName = personRepository.findFnameAndLname(25);
+        for (String s:personFirstAndLastName) {
+            System.out.println(s);
+        }
+    }
    
 
 
