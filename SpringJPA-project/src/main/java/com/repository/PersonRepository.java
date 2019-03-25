@@ -1,6 +1,8 @@
 package com.repository;
 
 import com.entity.Person;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -33,6 +35,8 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     @Query("select p from Person p where p.age>25")
     List<Person> findAllPersonByAgeSort(Sort sort);
+
+    Page<Person> findAll(Pageable pageable);
 
 
 }

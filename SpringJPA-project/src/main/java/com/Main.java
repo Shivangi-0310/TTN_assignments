@@ -28,6 +28,7 @@ public class Main {
         service.countPersonByFirstname();
         service.sortUsingMethod();
         service.showPersonUsingSortClass();
+        service.applyPagination();
 
     }
 }

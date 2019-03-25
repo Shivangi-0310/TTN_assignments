@@ -3,6 +3,8 @@ package com.service;
 import com.entity.Person;
 import com.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -173,6 +175,15 @@ public class PersonService {
         System.out.println(people);
     }
 
+    public void applyPagination(){
+        System.out.println("apply pagination>>>>>>>>>>>>>>>>>>>>>>>>>.");
+        Page<Person> personPage= personRepository
+                .findAll(
+                        new PageRequest(0,3,
+                                new Sort(Sort.Direction.DESC,"id")));
 
+        List<Person> people= personPage.getContent();
+        System.out.println(people);
+    }
 
 }
