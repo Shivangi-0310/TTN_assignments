@@ -1,0 +1,2 @@
+create database springJPA;
+use springJPA;
