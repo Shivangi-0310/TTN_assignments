@@ -60,5 +60,7 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     List<Person> findByAgeIn(List<Integer> age);
 
+    List<Person> findByFirstnameIgnoreCase(String firstname);
+
 
 }

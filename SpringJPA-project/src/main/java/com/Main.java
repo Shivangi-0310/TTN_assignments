@@ -41,5 +41,6 @@ public class Main {
         service.findByFirstnameLike();
         service.findByFirstnameNot();
         service.findByAgeIn();
+        service.findByFirstnameIgnoreCase();
     }
 }

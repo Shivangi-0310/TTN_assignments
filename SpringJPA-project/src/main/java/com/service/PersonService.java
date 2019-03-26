@@ -245,5 +245,11 @@ public class PersonService {
         List<Person> people = personRepository.findByAgeIn(Arrays.asList(23,29));
         System.out.println(people);
     }
-    
+
+    public void findByFirstnameIgnoreCase() {
+        System.out.println("usingIgnoreCase");
+        List<Person> people = personRepository.findByFirstnameIgnoreCase("aakash");
+        System.out.println(people);
+    }
+
 }
