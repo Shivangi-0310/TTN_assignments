@@ -1,27 +1,10 @@
-TS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+.gradle/
+.idea/
+build/
 *.iml
 *.ipr
-/out/
-/build
-/libs
+*.iws
+classes/**
+out/
+libs/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
