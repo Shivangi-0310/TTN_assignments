@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <head th:fragment="head(ExtJS,title)">
+    <head th:fragment="head(ExtJS,ExtCSS,title)">
         <meta charset="UTF-8">
 
         <script
@@ -11,8 +11,7 @@
                 crossorigin="anonymous"></script>
         <title th:text="${title}"></title>
         <script th:src="@{'/'+${ExtJS}}"></script>
-        <p>header fragment included</p>
-
+        <link th:href="@{'/'+${ExtCSS}}" rel="stylesheet"/>
     </head>
 </head>
 <body>
