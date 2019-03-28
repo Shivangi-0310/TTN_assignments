@@ -19,4 +19,8 @@ public class EmployeeService {
                 new Employee("Gabby", "gabbysnow@gmail.com", 24, true),
                 new Employee("Jon", "jon@gmail.com", 23, false));
     }
+
+    public Employee getEmployee() {
+        return new Employee("arya", "stark@gmail.com", 24, true);
+    }
 }

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<div th:fragment="header(employeeObject)">
+    <span th:text="${employeeObject.name}"></span> <span th:text="${employeeObject.email}"></span>
+</div>
+</body>
+
+</html>

@@ -23,6 +23,8 @@ public class HomeController {
     public String getHelloPage(Model model) {
         model.addAttribute("employee", new Employee());
         model.addAttribute("employeeTable", employeeService.getEmployeeList());
+        model.addAttribute("isAdmin", employeeService.getEmployee().isAdmin());
+        model.addAttribute("employeeObject", employeeService.getEmployee());
         return "First";
     }
 
