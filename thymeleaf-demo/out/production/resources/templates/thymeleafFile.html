@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+
+</head>
+<body>
+
+<h1 th:text="${name}">hey</h1>
+<h2 th:text="${user.getName()}">shivi</h2>
+<ul th:each="val,idx:${digits}">
+    <li th:text="${idx.odd}"></li>
+</ul>
+</body>
+</html>
