@@ -33,5 +33,9 @@ $(function () {
         $('.loading').show();
 
     });
-
+    $("#dropdown").change( function () {
+        var var1=document.getElementById("dropdown").value;
+        alert(var1);
+        console.log("alert");
+    });
 });

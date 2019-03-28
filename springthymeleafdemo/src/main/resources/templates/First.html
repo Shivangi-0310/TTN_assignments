@@ -61,6 +61,14 @@
 <span id="currentTime"></span>
 <br>
 <br>
+<label>Competency: </label>
+<select id="dropdown">
+    <option th:value="None">Select One</option>
+    <option th:each="competency : ${T(com.thymeleafdemo.springthymeleafdemo.model.Competency).values()}"
+            th:value="${competency.getValue()}" th:text="${competency.getValue()}"></option>
+</select>
+<br>
+<br>
 
 <h4>Common footer--></h4>
 <footer th:include="footer :: copy"></footer>
