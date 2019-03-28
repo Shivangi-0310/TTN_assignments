@@ -25,8 +25,8 @@
 </form>
 <br>
 <br>
-<br>
-<br>
+
+
 
 <h4>Table--></h4>
 <br>
@@ -47,6 +47,19 @@
     </tbody>
 </table>
 
+<br>
+<div th:with="var=${isAdmin}">
+
+    <span th:if="${var}">Hello From Admin</span>
+
+    <span th:unless="${var}">Hello From User</span>
+
+</div>
+<br>
+<br>
+<p>Current Time</p>
+<span id="currentTime"></span>
+<br>
 <br>
 
 <h4>Common footer--></h4>
