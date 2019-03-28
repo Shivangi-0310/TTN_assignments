@@ -7,8 +7,9 @@
 <button type="button" id="alertBtn">Click For Alert</button>
 <br>
 <br>
-<p>employee registration form </p>
-
+<h3>employee registration form </h3>
+<br>
+<br>
 <form th:action="@{/th/save-employee}" th:object="${employee}" method="post">
     Enter Name:
     <input th:type="text" th:name="name" th:field="*{name}">
@@ -18,9 +19,33 @@
     <input th:type="number" th:name="age" th:field="*{age}">
     <button th:type="sumbit">Submit</button>
 </form>
+<br>
+<br>
+<br>
+<br>
 
+<h4>Table--></h4>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="result,iterStat:${employeeTable}">
+        <td th:text="${result.name}"></td>
+        <td th:text="${result.email}"></td>
+        <td th:text="${result.age}"></td>
+    </tr>
+    </tbody>
+</table>
 
+<br>
 
+<h4>Common footer--></h4>
 <footer th:include="footer :: copy"></footer>
 
 </body>
