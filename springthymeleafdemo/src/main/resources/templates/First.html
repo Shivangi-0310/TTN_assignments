@@ -5,6 +5,20 @@
 <body>
 
 <button type="button" id="alertBtn">Click For Alert</button>
+<br>
+<br>
+<p>employee registration form </p>
+
+<form th:action="@{/th/save-employee}" th:object="${employee}" method="post">
+    Enter Name:
+    <input th:type="text" th:name="name" th:field="*{name}">
+    Enter Email:
+    <input th:type="email" th:name="email" th:field="*{email}">
+    Enter Age:
+    <input th:type="number" th:name="age" th:field="*{age}">
+    <button th:type="sumbit">Submit</button>
+</form>
+
 
 
 <footer th:include="footer :: copy"></footer>
