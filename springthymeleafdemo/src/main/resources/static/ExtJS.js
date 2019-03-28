@@ -1,9 +1,12 @@
 $(function () {
 
+    $('.loading').hide();
+
     $('body').on('click', '#alertBtn', function () {
         alert("Hello");
         console.log("alert");
     });
+
     $.ajax(
         startLoader(), {
 
@@ -20,6 +23,7 @@ $(function () {
 
             }
         })
+
     function startLoader() {
         $('.loading').show();
     }
@@ -33,9 +37,16 @@ $(function () {
         $('.loading').show();
 
     });
+
+    $('body').on('click', '.stop', function () {
+        $('.loading').stop();
+
+    });
+
     $("#dropdown").change( function () {
         var var1=document.getElementById("dropdown").value;
         alert(var1);
         console.log("alert");
     });
+
 });
