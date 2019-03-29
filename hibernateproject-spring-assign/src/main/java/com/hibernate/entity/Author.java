@@ -1,10 +1,7 @@
 package com.hibernate.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Transient;
-import java.sql.Date;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Author {
@@ -23,6 +20,7 @@ public class Author {
     private Integer age;
 
     @Column(name = "Date_of_Birth")
+    @Temporal(TemporalType.DATE)
     private Date dob;
 
     public Integer getId() {
