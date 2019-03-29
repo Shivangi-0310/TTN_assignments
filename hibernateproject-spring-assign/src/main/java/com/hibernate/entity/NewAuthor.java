@@ -9,7 +9,7 @@ public class NewAuthor {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy =GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer id;
 
     @Column(name = "Firstname")
@@ -31,6 +31,10 @@ public class NewAuthor {
 
     @ElementCollection
     private List<String> subjectList;
+
+    @OneToOne
+    @JoinColumn(name = "Book_join_column")
+    Book book;
 
     public String getFirstname() {
         return firstname;
@@ -80,6 +84,14 @@ public class NewAuthor {
         this.subjectList = subjectList;
     }
 
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
     @Override
     public String toString() {
         return "NewAuthor{" +
@@ -90,6 +102,7 @@ public class NewAuthor {
                 ", dob=" + dob +
                 ", address=" + address +
                 ", subjectList=" + subjectList +
+                ", book=" + book +
                 '}';
     }
 }

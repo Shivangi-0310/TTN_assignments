@@ -1,11 +1,12 @@
 import com.hibernate.entity.Address;
 import com.hibernate.entity.Author;
+import com.hibernate.entity.Book;
+import com.hibernate.entity.NewAuthor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -13,16 +14,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-
+//        Address class>>>
         Address address = new Address();
         address.setStreetNo(19);
         address.setLocation("Noida");
         address.setState("Uttar Pradesh");
 
-        List<String> subject= new ArrayList<>();
+
+//        List of subjects>>>
+        List<String> subject = new ArrayList<>();
         subject.add("english");
         subject.add("java");
         subject.add("database");
+
+//        ------------------------------------------------
+
+//        AUTHOR class>>>
 
 //      Uncomment *setId* to run Question 1-8
         Author author = new Author();
@@ -70,6 +77,48 @@ public class Main {
         author5.setAddress(address);
         author5.setSubjectList(subject);
 
+//        Book class>>>
+        Book book = new Book();
+        book.setBookName("Head First");
+
+        Book book1 = new Book();
+        book1.setBookName("Herbert Schildt");
+
+        Book book2 = new Book();
+        book2.setBookName("Let us C");
+
+
+//        NewAuthor Class>>>
+
+                NewAuthor newAuthor = new NewAuthor();
+
+        newAuthor.setFirstname("Shivangi");
+        newAuthor.setLastname("Jain");
+        newAuthor.setAge(23);
+        newAuthor.setDob(new Date(19950710));
+        newAuthor.setAddress(address);
+        newAuthor.setSubjectList(subject);
+        newAuthor.setBook(book);
+
+        NewAuthor newAuthor1 = new NewAuthor();
+
+        newAuthor1.setFirstname("Aakash");
+        newAuthor1.setLastname("Sharma");
+        newAuthor1.setAge(23);
+        newAuthor1.setDob(new Date(199510911));
+        newAuthor1.setAddress(address);
+        newAuthor1.setSubjectList(subject);
+        newAuthor1.setBook(book1);
+
+        NewAuthor newAuthor2 = new NewAuthor();
+
+        newAuthor2.setFirstname("Nayva");
+        newAuthor2.setLastname("Sharma");
+        newAuthor2.setAge(21);
+        newAuthor2.setDob(new Date(19990719));
+        newAuthor2.setAddress(address);
+        newAuthor2.setSubjectList(subject);
+        newAuthor2.setBook(book2);
 
 
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -84,6 +133,14 @@ public class Main {
         session.save(author2);
         session.save(author3);
         session.save(author5);
+
+        session.save(newAuthor);
+        session.save(newAuthor1);
+        session.save(newAuthor2);
+
+        session.save(book);
+        session.save(book1);
+        session.save(book2);
 
 //        Read operation
         Author author4 = session.get(Author.class, 4);
