@@ -5,9 +5,9 @@ import java.util.Date;
 
 @Entity
 public class Author {
+
     @Id
     @Column(name = "id")
-
 //    Uncomment *Identity or Table* to run Question 9-->
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy =GenerationType.TABLE)
@@ -26,6 +26,9 @@ public class Author {
     @Column(name = "Date_of_Birth")
     @Temporal(TemporalType.DATE)
     private Date dob;
+
+    @Embedded
+    Address address;
 
 //    Uncomment to run Question 1-8
     /*public Integer getId() {
@@ -68,6 +71,14 @@ public class Author {
         this.dob = dob;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Author{" +
@@ -76,6 +87,7 @@ public class Author {
                 ", lastname='" + lastname + '\'' +
                 ", age=" + age +
                 ", dob=" + dob +
+                ", address=" + address +
                 '}';
     }
 }
