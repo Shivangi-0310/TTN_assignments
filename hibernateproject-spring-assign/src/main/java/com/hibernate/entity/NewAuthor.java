@@ -1,7 +1,9 @@
 package com.hibernate.entity;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
 @Entity
@@ -32,9 +34,15 @@ public class NewAuthor {
     @ElementCollection
     private List<String> subjectList;
 
-    @OneToOne
+    //Uncomment for one to one (Question 14) -->
+    /*@OneToOne
     @JoinColumn(name = "Book_join_column")
-    Book book;
+    private Book book;*/
+
+    @OneToMany
+    @JoinTable(joinColumns = @JoinColumn(name="Author_ID")
+            ,inverseJoinColumns = @JoinColumn(name = "Book_ID"))
+    Collection<Book> book= new HashSet<>();
 
     public String getFirstname() {
         return firstname;
@@ -84,12 +92,23 @@ public class NewAuthor {
         this.subjectList = subjectList;
     }
 
-    public Book getBook() {
+//    uncomment for one to one >>>
+   /* public Book getBook() {
         return book;
     }
 
     public void setBook(Book book) {
         this.book = book;
+    }*/
+
+
+//   for one to one unidirectional >>>
+    public Collection<Book> getBookList() {
+        return book;
+    }
+
+    public void setBookList(Collection<Book> vehicle) {
+        this.book = vehicle;
     }
 
     @Override
