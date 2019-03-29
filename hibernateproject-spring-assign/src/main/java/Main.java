@@ -12,7 +12,7 @@ public class Main {
         Address address = new Address();
         address.setStreetNo(19);
         address.setLocation("Noida");
-        address.setState("UP");
+        address.setState("Uttar Pradesh");
 
 //      Uncomment *setId* to run Question 1-8
         Author author = new Author();
