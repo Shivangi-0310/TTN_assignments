@@ -2,6 +2,7 @@ package com.hibernate.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.sql.Date;
 
 @Entity
 public class Author {
@@ -13,6 +14,8 @@ public class Author {
     private String lastname;
 
     private Integer age;
+
+    private Date dob;
 
     public Integer getId() {
         return id;
@@ -46,6 +49,14 @@ public class Author {
         this.age = age;
     }
 
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
     @Override
     public String toString() {
         return "Author{" +
@@ -53,6 +64,7 @@ public class Author {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", age=" + age +
+                ", dob=" + dob +
                 '}';
     }
 }
