@@ -22,6 +22,10 @@ public class Student {
 
     private Integer percentage;
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
