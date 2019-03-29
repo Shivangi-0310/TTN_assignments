@@ -1,5 +1,6 @@
 package com.hibernate.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
@@ -7,14 +8,19 @@ import java.sql.Date;
 @Entity
 public class Author {
     @Id
+    @Column(name = "id")
     private Integer id;
 
+    @Column(name = "Firstname")
     private String firstname;
 
+    @Column(name = "Lastname")
     private String lastname;
 
+    @Column(name = "Age")
     private Integer age;
 
+    @Column(name = "Date_of_Birth")
     private Date dob;
 
     public Integer getId() {

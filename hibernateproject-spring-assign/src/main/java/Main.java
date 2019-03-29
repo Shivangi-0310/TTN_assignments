@@ -68,7 +68,9 @@ public class Main {
         session.delete(author2);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+
+//        uncomment to run create-drop->
+//        sessionFactory.close();
 
         System.out.println(author4);
     }
