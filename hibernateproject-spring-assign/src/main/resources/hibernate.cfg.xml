@@ -26,6 +26,8 @@
 
         <!--Annotated com.hibernate.entity class-->
         <mapping class="com.hibernate.entity.Author"/>
+        <mapping class="com.hibernate.entity.Book"/>
+        <mapping class="com.hibernate.entity.NewAuthor"/>
 
     </session-factory>
 </hibernate-configuration>
