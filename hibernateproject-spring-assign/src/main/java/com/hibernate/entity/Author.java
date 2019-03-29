@@ -3,6 +3,7 @@ package com.hibernate.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.sql.Date;
 
 @Entity
@@ -15,6 +16,7 @@ public class Author {
     private String firstname;
 
     @Column(name = "Lastname")
+    @Transient
     private String lastname;
 
     @Column(name = "Age")
