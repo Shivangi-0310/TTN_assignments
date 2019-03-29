@@ -2,6 +2,7 @@ package com.hibernate.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Author {
@@ -28,7 +29,10 @@ public class Author {
     private Date dob;
 
     @Embedded
-    Address address;
+    private Address address;
+
+    @ElementCollection
+    private List<String> subjectList;
 
 //    Uncomment to run Question 1-8
     /*public Integer getId() {
@@ -79,6 +83,14 @@ public class Author {
         this.address = address;
     }
 
+    public List<String> getSubjectList() {
+        return subjectList;
+    }
+
+    public void setSubjectList(List<String> subjectList) {
+        this.subjectList = subjectList;
+    }
+
     @Override
     public String toString() {
         return "Author{" +
@@ -88,6 +100,7 @@ public class Author {
                 ", age=" + age +
                 ", dob=" + dob +
                 ", address=" + address +
+                ", subjectList=" + subjectList +
                 '}';
     }
 }
