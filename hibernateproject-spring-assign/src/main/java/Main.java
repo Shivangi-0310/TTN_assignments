@@ -90,7 +90,7 @@ public class Main {
 
 //        NewAuthor Class>>>
 
-                NewAuthor newAuthor = new NewAuthor();
+        NewAuthor newAuthor = new NewAuthor();
 
         newAuthor.setFirstname("Shivangi");
         newAuthor.setLastname("Jain");
