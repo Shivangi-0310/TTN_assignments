@@ -7,6 +7,10 @@ import java.util.Date;
 public class Author {
     @Id
     @Column(name = "id")
+
+//    Uncomment *Identity or Table* to run Question 9-->
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =GenerationType.TABLE)
     private Integer id;
 
     @Column(name = "Firstname")
@@ -23,13 +27,14 @@ public class Author {
     @Temporal(TemporalType.DATE)
     private Date dob;
 
-    public Integer getId() {
+//    Uncomment to run Question 1-8
+    /*public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
+    }*/
 
     public String getFirstname() {
         return firstname;
