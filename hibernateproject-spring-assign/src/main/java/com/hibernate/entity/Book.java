@@ -12,12 +12,24 @@ public class Book {
     @Column(name = "Book_Name")
     private String bookName;
 
+    @ManyToOne
+    NewAuthor author;
+
+
     public String getBookName() {
         return bookName;
     }
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+
+    public NewAuthor getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(NewAuthor author) {
+        this.author = author;
     }
 
     @Override

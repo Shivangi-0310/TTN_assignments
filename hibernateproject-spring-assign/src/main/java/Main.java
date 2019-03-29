@@ -25,9 +25,9 @@ public class Main {
         subject.add("java");
         subject.add("database");
 
-//        ------------------------------------------------
 
-//        AUTHOR class>>>
+//      AUTHOR class>>>
+
 
 //      Uncomment *setId* to run Question 1-8
         Author author = new Author();
@@ -97,9 +97,10 @@ public class Main {
         bookSet1.add(book3);
 
 
-//        NewAuthor Class>>>
 
-        //uncomment setBook for one to one relationship
+//       NewAuthor Class>>>
+
+        //uncomment setBook for one to one relationship and comment setBooklist
         NewAuthor newAuthor = new NewAuthor();
 
         newAuthor.setFirstname("Shivangi");
@@ -131,6 +132,9 @@ public class Main {
         newAuthor2.setSubjectList(subject);
 //        newAuthor2.setBook(book2);
 
+//        one to many bidirectional>>>>
+        book.setAuthor(newAuthor);
+        book1.setAuthor(newAuthor);
 
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
