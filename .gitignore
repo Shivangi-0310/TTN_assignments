@@ -1,0 +1,8 @@
+dea/
+build/
+*.iml
+*.ipr
+*.iws
+classes/**
+out/
+libs/

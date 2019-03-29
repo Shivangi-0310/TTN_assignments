@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../GradleAssignment" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../GradleDirectory" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../Reap-project-ttn" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/.." value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../rest-with-spring" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../spring-boot" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../spring-thymeleaf" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../springthymeleafdemo" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../thymeleaf-demo" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../demo/gradle" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../gradleQuestion2" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../gradleQuestion3" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../gradleQuestion4" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../gradleQuestion5" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../gradleQuestion6" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../spock-demo" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../spring-boot" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../spring-thymeleaf" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="1299" />
+    <option name="height" value="743" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>
