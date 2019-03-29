@@ -1,10 +1,7 @@
 package com.hibernate.entity;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class NewAuthor {
@@ -39,14 +36,20 @@ public class NewAuthor {
     @JoinColumn(name = "Book_join_column")
     private Book book;*/
 
-    //Uncomment for one to one (Question 16 unidirectional and bidirectional)
+    //Uncomment for one to many (Question 16 unidirectional and bidirectional)
     /*@OneToMany //( unidirectional and bidirectional)
     @JoinTable(joinColumns = @JoinColumn(name="Author_ID")
             ,inverseJoinColumns = @JoinColumn(name = "Book_ID"))
-    Collection<Book> book= new HashSet<>();*/
+    private Collection<Book> book= new HashSet<>();*/
 
-    @OneToMany(mappedBy = "author")
-    Collection<Book> book= new HashSet<Book>();
+    //Uncomment for one to many (Question 16 without additional table)
+
+    /*@OneToMany(mappedBy = "author")
+    private Collection<Book> book= new HashSet<Book>();*/
+
+    @ManyToMany
+    private List<Book> books = new ArrayList<Book>();
+
 
     public String getFirstname() {
         return firstname;
@@ -96,7 +99,17 @@ public class NewAuthor {
         this.subjectList = subjectList;
     }
 
-//    uncomment for one to one >>>
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+
+    //    uncomment for one to one >>>
+
    /* public Book getBook() {
         return book;
     }
@@ -106,14 +119,14 @@ public class NewAuthor {
     }*/
 
 
-//   for one to one unidirectional >>>
-    public Collection<Book> getBookList() {
+// comment  for one to many unidirectional , bidirectional and without adding additional table>>>
+    /*public Collection<Book> getBookList() {
         return book;
     }
 
     public void setBookList(Collection<Book> vehicle) {
         this.book = vehicle;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -125,7 +138,7 @@ public class NewAuthor {
                 ", dob=" + dob +
                 ", address=" + address +
                 ", subjectList=" + subjectList +
-                ", book=" + book +
+                ", books=" + books +
                 '}';
     }
 }

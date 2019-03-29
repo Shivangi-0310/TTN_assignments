@@ -1,6 +1,8 @@
 package com.hibernate.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -12,8 +14,15 @@ public class Book {
     @Column(name = "Book_Name")
     private String bookName;
 
-    @ManyToOne
+
+//    Uncomment for many to one
+
+    /*@ManyToOne
     NewAuthor author;
+*/
+
+    @ManyToMany(mappedBy = "books")
+    List<NewAuthor> newAuthors = new ArrayList<>();
 
 
     public String getBookName() {
@@ -24,12 +33,22 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public NewAuthor getAuthor() {
+//    uncomment for many to one
+    /*public NewAuthor getAuthor() {
         return author;
     }
 
     public void setAuthor(NewAuthor author) {
         this.author = author;
+    }*/
+
+
+    public List<NewAuthor> getNewAuthors() {
+        return newAuthors;
+    }
+
+    public void setNewAuthors(List<NewAuthor> newAuthors) {
+        this.newAuthors = newAuthors;
     }
 
     @Override
@@ -37,6 +56,7 @@ public class Book {
         return "Book{" +
                 "id=" + id +
                 ", bookName='" + bookName + '\'' +
+                ", newAuthors=" + newAuthors +
                 '}';
     }
 }

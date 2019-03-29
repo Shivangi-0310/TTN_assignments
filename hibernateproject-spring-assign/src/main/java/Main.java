@@ -99,10 +99,17 @@ public class Main {
         bookSet1.add(book2);
         bookSet1.add(book3);
 
+//        book list------->
+        List<Book> bookList= Arrays.asList(book,book1,book2,book3);
+
 
 //       NewAuthor Class>>>
 
-//        uncomment setBook for one to one relationship and comment setBooklist
+//        uncomment setBook() for one to one relationship and comment setBooklist.
+//        uncomment setBookList() for one to many unidirectional, bidirectional and without
+//        additional table.
+
+
         NewAuthor newAuthor = new NewAuthor();
 
         newAuthor.setFirstname("Shivangi");
@@ -111,8 +118,9 @@ public class Main {
         newAuthor.setDob(new Date(19950710));
         newAuthor.setAddress(address);
         newAuthor.setSubjectList(subject);
+        newAuthor.setBooks(bookList);
 //        newAuthor.setBook(book);
-        newAuthor.setBookList(bookSet);
+//        newAuthor.setBookList(bookSet);
 
         NewAuthor newAuthor1 = new NewAuthor();
         newAuthor1.setFirstname("Aakash");
@@ -121,8 +129,9 @@ public class Main {
         newAuthor1.setDob(new Date(199510911));
         newAuthor1.setAddress(address);
         newAuthor1.setSubjectList(subject);
+        newAuthor1.setBooks(bookList);
 //        newAuthor1.setBook(book1);
-        newAuthor1.setBookList(bookSet1);
+//        newAuthor1.setBookList(bookSet1);
 
 
         NewAuthor newAuthor2 = new NewAuthor();
@@ -134,9 +143,18 @@ public class Main {
         newAuthor2.setSubjectList(subject);
 //        newAuthor2.setBook(book2);
 
-//        one to many bidirectional>>>>
-        book.setAuthor(newAuthor);
-        book1.setAuthor(newAuthor1);
+//        uncomment for one to many bidirectional and without additional table>>>>
+        /*book.setAuthor(newAuthor);
+        book1.setAuthor(newAuthor1);*/
+
+//        many to many for book class------->
+        List<NewAuthor> authors= Arrays.asList(newAuthor,newAuthor1);
+        book.setNewAuthors(authors);
+        book1.setNewAuthors(authors);
+        book2.setNewAuthors(authors);
+        book3.setNewAuthors(authors);
+      
+
 
 //-----------------------------------------------------------------------------------------------
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
