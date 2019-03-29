@@ -37,6 +37,13 @@ public class Main {
         author3.setAge(25);
         author3.setDob(new Date(19910615));
 
+        Author author5 = new Author();
+        author5.setId(5);
+        author5.setFirstname("Ankit");
+        author5.setLastname("Mudgal");
+        author5.setAge(30);
+        author5.setDob(new Date(19890515));
+
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -48,6 +55,7 @@ public class Main {
         session.save(author1);
         session.save(author2);
         session.save(author3);
+        session.save(author5);
 
 //        Read operation
         Author author4 = session.get(Author.class, 4);
