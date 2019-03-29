@@ -39,10 +39,14 @@ public class NewAuthor {
     @JoinColumn(name = "Book_join_column")
     private Book book;*/
 
-    @OneToMany
+    //Uncomment for one to one (Question 16 unidirectional and bidirectional)
+    /*@OneToMany //( unidirectional and bidirectional)
     @JoinTable(joinColumns = @JoinColumn(name="Author_ID")
             ,inverseJoinColumns = @JoinColumn(name = "Book_ID"))
-    Collection<Book> book= new HashSet<>();
+    Collection<Book> book= new HashSet<>();*/
+
+    @OneToMany(mappedBy = "author")
+    Collection<Book> book= new HashSet<Book>();
 
     public String getFirstname() {
         return firstname;

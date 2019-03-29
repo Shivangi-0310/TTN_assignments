@@ -75,7 +75,10 @@ public class Main {
         author5.setAddress(address);
         author5.setSubjectList(subject);
 
+
+
 //        Book class>>>
+
         Book book = new Book();
         book.setBookName("Head First");
 
@@ -86,7 +89,7 @@ public class Main {
         book2.setBookName("Let us C");
 
         Book book3 = new Book();
-        book2.setBookName("Thinking by java");
+        book3.setBookName("Thinking by java");
 
         Set<Book> bookSet = new HashSet<>();
         bookSet.add(book);
@@ -97,10 +100,9 @@ public class Main {
         bookSet1.add(book3);
 
 
-
 //       NewAuthor Class>>>
 
-        //uncomment setBook for one to one relationship and comment setBooklist
+//        uncomment setBook for one to one relationship and comment setBooklist
         NewAuthor newAuthor = new NewAuthor();
 
         newAuthor.setFirstname("Shivangi");
@@ -134,8 +136,9 @@ public class Main {
 
 //        one to many bidirectional>>>>
         book.setAuthor(newAuthor);
-        book1.setAuthor(newAuthor);
+        book1.setAuthor(newAuthor1);
 
+//-----------------------------------------------------------------------------------------------
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
