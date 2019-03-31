@@ -1,5 +1,8 @@
 package com.restspring.restwithspring.controllers;
 
+import com.fasterxml.jackson.databind.ser.FilterProvider;
+import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.restspring.restwithspring.entities.Student;
 import com.restspring.restwithspring.exception.StudentAlreadyExistsException;
 import com.restspring.restwithspring.exception.StudentNotFoundException;
@@ -8,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -34,8 +38,23 @@ public class StudentController {
     }
 
     @GetMapping("/i18")
-    String helloWorld(){
-        return messageSource.getMessage("nice.day.message",null, LocaleContextHolder.getLocale());
+    String helloWorld() {
+        return messageSource.getMessage("nice.day.message", null, LocaleContextHolder.getLocale());
+    }
+
+
+    @GetMapping("/studentfilters")
+    MappingJacksonValue getStudent() {
+        Iterable<Student> student = studentService.findAll();
+        SimpleBeanPropertyFilter simpleBeanPropertyFilter =
+                SimpleBeanPropertyFilter.filterOutAllExcept("name","standard","age","city","percentage");
+
+        FilterProvider filterProvider = new SimpleFilterProvider()
+                .addFilter("myFilter", simpleBeanPropertyFilter);
+
+        MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(student);
+        mappingJacksonValue.setFilters(filterProvider);
+        return mappingJacksonValue;
     }
 
 

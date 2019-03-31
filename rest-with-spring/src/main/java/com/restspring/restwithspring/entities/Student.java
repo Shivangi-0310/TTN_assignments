@@ -1,5 +1,6 @@
 package com.restspring.restwithspring.entities;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
@@ -9,7 +10,12 @@ import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 @Entity
-@JsonIgnoreProperties(value = {"percentage"})
+// uncomment for static filtering--->
+//@JsonIgnoreProperties(value = {"id"})
+
+
+// uncomment to run Question 6 dynamic filtering
+@JsonFilter("myFilter")
 public class Student {
 
     @Id
@@ -26,6 +32,18 @@ public class Student {
     private String city;
 
     private Integer percentage;
+
+    public Student() {
+    }
+
+    public Student(@Size(min = 4, message = "name should have atleast 4 characters") String name, String standard,
+                   Integer age, String city, Integer percentage) {
+        this.name = name;
+        this.standard = standard;
+        this.age = age;
+        this.city = city;
+        this.percentage = percentage;
+    }
 
     public Integer getId() {
         return id;
@@ -71,8 +89,8 @@ public class Student {
         this.percentage = percentage;
     }
 
-    public static Student createStudent(String name, String standard, Integer age, String city, Integer percentage){
-        Student student= new Student();
+    public static Student createStudent(String name, String standard, Integer age, String city, Integer percentage) {
+        Student student = new Student();
         student.setName(name);
         student.setStandard(standard);
         student.setAge(age);
