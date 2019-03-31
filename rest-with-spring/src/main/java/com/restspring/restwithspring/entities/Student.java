@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 
 
 // uncomment to run Question 6 dynamic filtering
-@JsonFilter("myFilter")
+//@JsonFilter("myFilter")
 public class Student {
 
     @Id

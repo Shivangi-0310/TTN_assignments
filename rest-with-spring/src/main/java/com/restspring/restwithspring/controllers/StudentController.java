@@ -4,9 +4,12 @@ import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.restspring.restwithspring.entities.Student;
+import com.restspring.restwithspring.entities.StudentV1;
+import com.restspring.restwithspring.entities.StudentV2;
 import com.restspring.restwithspring.exception.StudentAlreadyExistsException;
 import com.restspring.restwithspring.exception.StudentNotFoundException;
 import com.restspring.restwithspring.services.StudentService;
+import com.restspring.restwithspring.version.Name;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -47,7 +50,7 @@ public class StudentController {
     MappingJacksonValue getStudent() {
         Iterable<Student> student = studentService.findAll();
         SimpleBeanPropertyFilter simpleBeanPropertyFilter =
-                SimpleBeanPropertyFilter.filterOutAllExcept("name","standard","age","city","percentage");
+                SimpleBeanPropertyFilter.filterOutAllExcept("name", "standard", "age", "city", "percentage");
 
         FilterProvider filterProvider = new SimpleFilterProvider()
                 .addFilter("myFilter", simpleBeanPropertyFilter);
@@ -105,24 +108,55 @@ public class StudentController {
                 .path("{id}")
                 .buildAndExpand(student.getId())
                 .toUri();
-
         return ResponseEntity.created(uri).build();
     }
 
+
     @PutMapping("/students/{id}/{name}")
     public ResponseEntity<Object> updateStudent(@RequestBody Student student, @PathVariable Integer id, @PathVariable String name) {
-
         Student student5 = studentService.getStudentById(id);
 
         if (student5 == null) {
             throw new StudentNotFoundException("student not found");
         }
         student5.setName(name);
-
         studentService.saveStudent(student5);
-
         return ResponseEntity.noContent().build();
     }
 
+
+    //URI versioning
+    @GetMapping("/students/V1")
+    StudentV1 getStudentV1() {
+        return new StudentV1("aakash");
+    }
+
+    @GetMapping("/students/V2")
+    StudentV2 getStudentV2() {
+        return new StudentV2(new Name("aakash", "sharma"));
+    }
+
+    //    parameter versioning
+    @GetMapping(value = "/students/param", params = "version=1")
+    StudentV1 getStudentParam1() {
+        return new StudentV1("aakash");
+    }
+
+    @GetMapping(value = "/students/param", params = "version=2")
+    StudentV2 getStudentParam2() {
+        return new StudentV2(new Name("aakash", "sharma"));
+    }
+
+    //header versioning
+
+    @GetMapping(value = "/students/header", headers = "API-VERSION=1")
+    StudentV1 getPersonHeader1() {
+        return new StudentV1("aakash");
+    }
+
+    @GetMapping(value = "/students/header", headers = "API-VERSION=2")
+    StudentV2 getPersonHeader2() {
+        return new StudentV2(new Name("aakash", "sharma"));
+    }
 
 }
