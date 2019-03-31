@@ -54,10 +54,10 @@ public class StudentController {
 
 //    delete student by id
     @DeleteMapping("/students/{id}")
-    void deleteStudent(@PathVariable Integer id) {
+    void deleteStudent(@PathVariable Integer id) throws Exception {
         Student student = studentService.getStudentById(id);
         if (student == null) {
-            throw new StudentNotFoundException("student not found");
+            throw new Exception("all exception handled");
         }
         studentService.deleteStudent(student);
     }
