@@ -5,6 +5,8 @@ import com.restspring.restwithspring.exception.StudentAlreadyExistsException;
 import com.restspring.restwithspring.exception.StudentNotFoundException;
 import com.restspring.restwithspring.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 
@@ -20,21 +23,30 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
+    @Autowired
+    MessageSource messageSource;
 
     @GetMapping("/")
-    String getString() {
-        return "welcome user";
+    String getString(@RequestHeader(name = "Accept-Language", required = false) Locale locale) {
+        System.out.println("hello world ");
+        System.out.println(locale.getLanguage());
+        return messageSource.getMessage("nice.day.message", null, locale);
+    }
+
+    @GetMapping("/i18")
+    String helloWorld(){
+        return messageSource.getMessage("nice.day.message",null, LocaleContextHolder.getLocale());
     }
 
 
-//    retrieve all students
+    //    retrieve all students
     @GetMapping("/students")
     List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
 
-//    retrieve student by id
+    //    retrieve student by id
     @GetMapping("/students/{id}")
     Student getStudentById(@PathVariable Integer id) {
         Student student = studentService.getStudentById(id);
@@ -46,14 +58,14 @@ public class StudentController {
     }
 
 
-//    save student
+    //    save student
     @PostMapping("/students")
     Student saveStudent(Student student) {
         studentService.saveStudent(student);
         return student;
     }
 
-//    delete student by id
+    //    delete student by id
     @DeleteMapping("/students/{id}")
     void deleteStudent(@PathVariable Integer id) throws Exception {
         Student student = studentService.getStudentById(id);
@@ -64,7 +76,7 @@ public class StudentController {
     }
 
 
-//    enhanced post request with URI status code
+    //    enhanced post request with URI status code
     @PostMapping(value = "/studentposts")
     ResponseEntity<Student> saveStudent1(@Valid @RequestBody Student student) {
         studentService.saveStudent(student);
