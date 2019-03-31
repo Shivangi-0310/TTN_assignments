@@ -3,6 +3,7 @@ package com.restspring.restwithspring.controllers;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
+import com.restspring.restwithspring.entities.Post;
 import com.restspring.restwithspring.entities.Student;
 import com.restspring.restwithspring.entities.StudentV1;
 import com.restspring.restwithspring.entities.StudentV2;
@@ -13,9 +14,10 @@ import com.restspring.restwithspring.version.Name;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
@@ -159,4 +161,48 @@ public class StudentController {
         return new StudentV2(new Name("aakash", "sharma"));
     }
 
+
+//    CRUD operations
+
+    @GetMapping("/postObject")
+    public Post getPostObject() {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "https://jsonplaceholder.typicode.com/posts/1";
+        ResponseEntity<Post> response = restTemplate.getForEntity(url, Post.class);
+        System.out.println(response.getStatusCode().toString());
+        System.out.println(response.getHeaders().toString());
+        return response.getBody();
+    }
+
+    @PostMapping("/createPost")
+    public ResponseEntity<Post> createPost() {
+        String url = "https://jsonplaceholder.typicode.com/posts";
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Content-type", "application/json; charset=UTF-8");
+        HttpEntity<Post> request = new HttpEntity<>(new Post(10000L, 10000L, "title1", "description1"), httpHeaders);
+        Post post = restTemplate.postForObject(url, request, Post.class);
+        System.out.println(post);
+        return new ResponseEntity<Post>(post, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/updatePost")
+    public ResponseEntity<Post> updatePost() {
+        String url = "https://jsonplaceholder.typicode.com/posts/1";
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Content-type", "application/json; charset=UTF-8");
+        HttpEntity<Post> request = new HttpEntity<>(new Post(1L, 100L, "title1", "description1"), httpHeaders);
+        return restTemplate.exchange(url, HttpMethod.PUT, request, Post.class);
+    }
+
+    @DeleteMapping("/deletePost")
+    public void deletePost() {
+        String url = "https://jsonplaceholder.typicode.com/posts/1";
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Content-type", "application/json; charset=UTF-8");
+        HttpEntity<Post> request = new HttpEntity<>(httpHeaders);
+        restTemplate.exchange(url, HttpMethod.DELETE, request, Post.class);
+    }
 }
