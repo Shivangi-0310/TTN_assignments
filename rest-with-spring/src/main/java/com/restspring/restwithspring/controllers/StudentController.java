@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -64,8 +65,8 @@ public class StudentController {
 
 
 //    enhanced post request with URI status code
-    @PostMapping(value = "/studentpost")
-    ResponseEntity<Student> saveStudent1(@RequestBody Student student) {
+    @PostMapping(value = "/studentposts")
+    ResponseEntity<Student> saveStudent1(@Valid @RequestBody Student student) {
         studentService.saveStudent(student);
 
         URI uri = ServletUriComponentsBuilder

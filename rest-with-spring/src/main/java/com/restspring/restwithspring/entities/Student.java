@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Student {
@@ -11,7 +12,8 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    
+
+    @Size(min = 4, message = "name should have atleast 4 characters")
     private String name;
 
     private String standard;
